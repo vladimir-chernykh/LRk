@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://en.wikipedia.org/wiki/Uniform_resource_identifier" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:t="http://en.wikipedia.org/wiki/Uniform_resource_identifier">
+
+  <xs:include schemaLocation="grammar.xsd"/>
+
+  <xs:simpleType name ="actionList">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="shift" />
+      <xs:enumeration value="reduce" />
+      <xs:enumeration value="accept" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:element name="lrk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="grammar" type="t:grammarType"/>
+
+        <xs:element name="analyzer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="state">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="unbounded" name="action">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="string">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="symbol" minOccurs="1" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="order" type="xs:unsignedByte" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" maxOccurs="1" name="rule" type="xs:unsignedByte" />
+                        </xs:sequence>
+                        <xs:attribute name="value" type="t:actionList" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="goto">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="symbol" type="xs:string" />
+                          <xs:element name="value" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="k" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="startState" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

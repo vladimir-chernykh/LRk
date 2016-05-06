@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<?xml-stylesheet type='text/xsl' href="grammar.xsl"?>
+<grammar xmlns="http://umeta.ru/namespaces/trpl"  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://umeta.ru/namespaces/trpl grammar.xsd'>
+  <NS>S</NS>
+  <NS>A</NS>
+  <NS>B</NS>
+  <TS>a</TS>
+  <TS>b</TS>
+  <PR>
+    <left>
+      <PRS order="1">S</PRS>
+    </left>
+    <right>
+      <PRS order="1">A</PRS>
+      <PRS order="2">a</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">S</PRS>
+    </left>
+    <right>
+      <PRS order="1">B</PRS>
+      <PRS order="2">a</PRS>
+      <PRS order="3">b</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">A</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">B</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+    </right>
+  </PR>
+  <SS>S</SS>
+</grammar>
+

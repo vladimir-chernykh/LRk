@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<?xml-stylesheet type='text/xsl' href="grammar.xsl"?>
+<grammar xmlns="http://umeta.ru/namespaces/trpl"  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://umeta.ru/namespaces/trpl grammar.xsd'>
+  <NS>S</NS>
+  <NS>[q0aq0]</NS>
+  <NS>[q0aq1]</NS>
+  <NS>[q1aq0]</NS>
+  <NS>[q1aq1]</NS>
+  <NS>[q0Z0q0]</NS>
+  <NS>[q0Z0q1]</NS>
+  <NS>[q1Z0q0]</NS>
+  <NS>[q1Z0q1]</NS>
+  <TS>a</TS>
+  <TS>b</TS>
+  <PR>
+    <left>
+      <PRS order="1">S</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq0]</PRS>
+      <PRS order="3">[q0Z0q0]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">S</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq1]</PRS>
+      <PRS order="3">[q1Z0q0]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">S</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq0]</PRS>
+      <PRS order="3">[q0Z0q1]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">S</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq1]</PRS>
+      <PRS order="3">[q1Z0q1]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">S</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq1]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">[q0Z0q0]</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq0]</PRS>
+      <PRS order="3">[q0Z0q0]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">[q0Z0q0]</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq1]</PRS>
+      <PRS order="3">[q1Z0q0]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">[q0Z0q1]</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq0]</PRS>
+      <PRS order="3">[q0Z0q1]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">[q0Z0q1]</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq1]</PRS>
+      <PRS order="3">[q1Z0q1]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">[q0Z0q1]</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq1]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">[q0aq0]</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq0]</PRS>
+      <PRS order="3">[q0aq0]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">[q0aq0]</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq1]</PRS>
+      <PRS order="3">[q1aq0]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">[q0aq1]</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq0]</PRS>
+      <PRS order="3">[q0aq1]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">[q0aq1]</PRS>
+    </left>
+    <right>
+      <PRS order="1">a</PRS>
+      <PRS order="2">[q0aq1]</PRS>
+      <PRS order="3">[q1aq1]</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">[q0aq1]</PRS>
+    </left>
+    <right>
+      <PRS order="1">b</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">[q1aq1]</PRS>
+    </left>
+    <right>
+      <PRS order="1">b</PRS>
+    </right>
+  </PR>
+  <SS>S</SS>
+</grammar>
+

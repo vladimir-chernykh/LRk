@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<?xml-stylesheet type='text/xsl' href='grammar.xsl'?>
+<grammar xmlns="http://umeta.ru/namespaces/trpl"  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://umeta.ru/namespaces/trpl grammar.xsd'>
+  <NS>E</NS>
+  <NS>T</NS>
+  <NS>F</NS>
+  <NS>E'</NS>
+  <NS>T'</NS>
+  <TS>*</TS>
+  <TS>+</TS>
+  <TS>id</TS>
+  <PR>
+    <left>
+      <PRS order="1">E</PRS>
+    </left>
+    <right>
+      <PRS order="1">T</PRS>
+      <PRS order="2">E'</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">E'</PRS>
+    </left>
+    <right>
+      <PRS order="1">+</PRS>
+      <PRS order="2">T</PRS>
+      <PRS order="3">E'</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">E'</PRS>
+    </left>
+    <right/>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">T</PRS>
+    </left>
+    <right>
+      <PRS order="1">F</PRS>
+      <PRS order="2">T'</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">T'</PRS>
+    </left>
+    <right>
+      <PRS order="1">*</PRS>
+      <PRS order="2">F</PRS>
+      <PRS order="3">T'</PRS>
+    </right>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">T'</PRS>
+    </left>
+    <right/>
+  </PR>
+  <PR>
+    <left>
+      <PRS order="1">F</PRS>
+    </left>
+    <right>
+      <PRS order="1">id</PRS>
+    </right>
+  </PR>
+  <SS>E</SS>
+</grammar>

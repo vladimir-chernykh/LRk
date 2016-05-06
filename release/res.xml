@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="Windows-1251" ?>
+<?xml-stylesheet type="text/xsl" href="lrk.xsl" ?>
+<lrk xmlns="http://umeta.ru/namespaces/trpl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://umeta.ru/namespaces/trpl lrk.xsd">
+    <grammar>
+        <NS>E</NS>
+        <NS>F</NS>
+        <NS>S&apos;</NS>
+        <NS>T</NS>
+        <TS>$</TS>
+        <TS>*</TS>
+        <TS>+</TS>
+        <TS>id</TS>
+        <PR order="1">
+            <left>
+                <PRS order="1">E</PRS>
+            </left>
+            <right>
+                <PRS order="1">E</PRS>
+                <PRS order="2">+</PRS>
+                <PRS order="3">T</PRS>
+            </right>
+        </PR>
+        <PR order="2">
+            <left>
+                <PRS order="1">E</PRS>
+            </left>
+            <right>
+                <PRS order="1">T</PRS>
+            </right>
+        </PR>
+        <PR order="3">
+            <left>
+                <PRS order="1">F</PRS>
+            </left>
+            <right>
+                <PRS order="1">id</PRS>
+            </right>
+        </PR>
+        <PR order="4">
+            <left>
+                <PRS order="1">S&apos;</PRS>
+            </left>
+            <right>
+                <PRS order="1">E</PRS>
+                <PRS order="2">$</PRS>
+            </right>
+        </PR>
+        <PR order="5">
+            <left>
+                <PRS order="1">T</PRS>
+            </left>
+            <right>
+                <PRS order="1">F</PRS>
+            </right>
+        </PR>
+        <PR order="6">
+            <left>
+                <PRS order="1">T</PRS>
+            </left>
+            <right>
+                <PRS order="1">T</PRS>
+                <PRS order="2">*</PRS>
+                <PRS order="3">F</PRS>
+            </right>
+        </PR>
+        <SS>S&apos;</SS>
+    </grammar>
+    <analyzer k="1" startState="I0">
+        <state name="I0">
+            <action value="shift">
+                <string>
+                    <symbol order="1">id</symbol>
+                </string>
+            </action>
+            <goto>
+                <symbol>E</symbol>
+                <value>I1</value>
+            </goto>
+            <goto>
+                <symbol>F</symbol>
+                <value>I2</value>
+            </goto>
+            <goto>
+                <symbol>T</symbol>
+                <value>I3</value>
+            </goto>
+            <goto>
+                <symbol>id</symbol>
+                <value>I4</value>
+            </goto>
+        </state>
+        <state name="I1">
+            <action value="accept">
+                <string>
+                    <symbol order="1">$</symbol>
+                </string>
+            </action>
+            <action value="shift">
+                <string>
+                    <symbol order="1">+</symbol>
+                </string>
+            </action>
+            <goto>
+                <symbol>+</symbol>
+                <value>I5</value>
+            </goto>
+        </state>
+        <state name="I2">
+            <action value="reduce">
+                <string>
+                    <symbol order="1">$</symbol>
+                </string>
+                <rule>5</rule>
+            </action>
+            <action value="reduce">
+                <string>
+                    <symbol order="1">*</symbol>
+                </string>
+                <rule>5</rule>
+            </action>
+            <action value="reduce">
+                <string>
+                    <symbol order="1">+</symbol>
+                </string>
+                <rule>5</rule>
+            </action>
+        </state>
+        <state name="I3">
+            <action value="reduce">
+                <string>
+                    <symbol order="1">$</symbol>
+                </string>
+                <rule>2</rule>
+            </action>
+            <action value="shift">
+                <string>
+                    <symbol order="1">*</symbol>
+                </string>
+            </action>
+            <action value="reduce">
+                <string>
+                    <symbol order="1">+</symbol>
+                </string>
+                <rule>2</rule>
+            </action>
+            <goto>
+                <symbol>*</symbol>
+                <value>I6</value>
+            </goto>
+        </state>
+        <state name="I4">
+            <action value="reduce">
+                <string>
+                    <symbol order="1">$</symbol>
+                </string>
+                <rule>3</rule>
+            </action>
+            <action value="reduce">
+                <string>
+                    <symbol order="1">*</symbol>
+                </string>
+                <rule>3</rule>
+            </action>
+            <action value="reduce">
+                <string>
+                    <symbol order="1">+</symbol>
+                </string>
+                <rule>3</rule>
+            </action>
+        </state>
+        <state name="I5">
+            <action value="shift">
+                <string>
+                    <symbol order="1">id</symbol>
+                </string>
+            </action>
+            <goto>
+                <symbol>F</symbol>
+                <value>I2</value>
+            </goto>
+            <goto>
+                <symbol>T</symbol>
+                <value>I7</value>
+            </goto>
+            <goto>
+                <symbol>id</symbol>
+                <value>I4</value>
+            </goto>
+        </state>
+        <state name="I6">
+            <action value="shift">
+                <string>
+                    <symbol order="1">id</symbol>
+                </string>
+            </action>
+            <goto>
+                <symbol>F</symbol>
+                <value>I8</value>
+            </goto>
+            <goto>
+                <symbol>id</symbol>
+                <value>I4</value>
+            </goto>
+        </state>
+        <state name="I7">
+            <action value="reduce">
+                <string>
+                    <symbol order="1">$</symbol>
+                </string>
+                <rule>1</rule>
+            </action>
+            <action value="shift">
+                <string>
+                    <symbol order="1">*</symbol>
+                </string>
+            </action>
+            <action value="reduce">
+                <string>
+                    <symbol order="1">+</symbol>
+                </string>
+                <rule>1</rule>
+            </action>
+            <goto>
+                <symbol>*</symbol>
+                <value>I6</value>
+            </goto>
+        </state>
+        <state name="I8">
+            <action value="reduce">
+                <string>
+                    <symbol order="1">$</symbol>
+                </string>
+                <rule>6</rule>
+            </action>
+            <action value="reduce">
+                <string>
+                    <symbol order="1">*</symbol>
+                </string>
+                <rule>6</rule>
+            </action>
+            <action value="reduce">
+                <string>
+                    <symbol order="1">+</symbol>
+                </string>
+                <rule>6</rule>
+            </action>
+        </state>
+    </analyzer>
+</lrk>
